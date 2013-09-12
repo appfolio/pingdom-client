@@ -9,7 +9,7 @@ module Pingdom
     
     def self.attributes(hash)
       hash.each do |(attribute, aliases)|
-        class_eval <<-"end;" unless instance_methods.include?(attribute.to_s)
+        class_eval <<-"end;" unless instance_methods.include?(RUBY_VERSION.to_f < 1.9 ? attribute.to_s : attribute)
           def #{attribute}
             @attributes[:#{attribute}]
           end

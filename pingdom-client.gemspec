@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{pingdom-client}
-  s.version = "0.0.6.alpha"
+  s.version = "0.0.6.alpha.af2"
   
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matt Todd"]
@@ -45,20 +45,20 @@ Gem::Specification.new do |s|
     
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency("faraday",       ["~> 0.5.7"])
-      s.add_runtime_dependency("excon",         ["~> 0.5.6"])
+      s.add_runtime_dependency("excon",         ["~> 0.6.4"])
       s.add_runtime_dependency("yajl-ruby",     ["~> 0.8.1"])
-      s.add_runtime_dependency("activesupport", ["~> 3.0.4"])
-      s.add_runtime_dependency("i18n",          ["~> 0.5.0"])
+      s.add_runtime_dependency("activesupport", [">= 3.0.4"])
+      s.add_runtime_dependency("i18n",          [">= 0.5.0"])
       
       s.add_development_dependency("bundler", ["~> 1.0.0"])
       s.add_development_dependency("rake",    ["~> 0.8.7"])
       s.add_development_dependency("rspec",   ["= 2.1.0"])
     else
       s.add_dependency("faraday",       ["~> 0.5.7"])
-      s.add_dependency("excon",         ["~> 0.5.6"])
+      s.add_dependency("excon",         ["~> 0.6.4"])
       s.add_dependency("yajl-ruby",     ["~> 0.8.1"])
-      s.add_dependency("activesupport", ["~> 3.0.4"])
-      s.add_dependency("i18n",          ["~> 0.5.0"])
+      s.add_dependency("activesupport", [">= 3.0.4"])
+      s.add_dependency("i18n",          [">= 0.5.0"])
       
       s.add_dependency("bundler", ["~> 1.0.0"])
       s.add_dependency("rake",    ["~> 0.8.7"])
@@ -66,10 +66,10 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency("faraday",       ["~> 0.5.7"])
-    s.add_dependency("excon",         ["~> 0.5.6"])
+    s.add_dependency("excon",         ["~> 0.6.4"])
     s.add_dependency("yajl-ruby",     ["~> 0.8.1"])
-    s.add_dependency("activesupport", ["~> 3.0.4"])
-    s.add_dependency("i18n",          ["~> 0.5.0"])
+    s.add_dependency("activesupport", [">= 3.0.4"])
+    s.add_dependency("i18n",          [">= 0.5.0"])
     
     s.add_dependency("bundler", ["~> 1.0.0"])
     s.add_dependency("rake", ["~> 0.8.7"])
