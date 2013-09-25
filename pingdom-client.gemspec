@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{pingdom-client}
-  s.version = "0.0.6.alpha.af2"
+  s.version = "0.0.6.oib"
   
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matt Todd"]
@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
     "lib/pingdom.rb",
     "lib/tinder/faraday_response.rb",
     "Rakefile",
-    "Readme.md",
+    "README.md",
     "spec/pingdom-client_spec.rb",
     "spec/spec_helper.rb"
   ]
