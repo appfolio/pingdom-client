@@ -40,6 +40,11 @@ module Pingdom
       update_limits!(response.headers['req-limit-short'], response.headers['req-limit-long'])
       response
     end
+
+    def post(uri, params)
+      response = @connection.post(@connection.build_url(uri, prepare_params(params)), nil, "App-Key" => @options[:key])
+      response
+    end
     
     def update_limits!(short, long)
       @limit ||= {}
@@ -63,6 +68,15 @@ module Pingdom
     def checks(options = {})
       Check.parse(self, get("checks", options))
     end
+
+    REQUIRED_FOR_CREATE = [:name, :host, :type]
+    def create_check(options = {})
+      missing_keys =  REQUIRED_FOR_CREATE - options.keys
+      raise ArgumentError, "#{missing_keys} required" if missing_keys.any?
+
+      Check.parse(self, post("checks", options))
+    end
+
     def check(id)
       Check.parse(self, get("checks/#{id}")).first
     end
